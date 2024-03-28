@@ -12,7 +12,7 @@ def main():
         connection = psycopg2.connect(
             host="localhost", 
             user="postgres",
-            password="123", # Clave para acceder a la base de datos
+            password="", # Clave para acceder a la base de datos
             database="concesionaria",
             port = "" # En caso de tener versiones diferentes de sql usar el puerto de la version.
         )
