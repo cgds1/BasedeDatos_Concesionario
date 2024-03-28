@@ -7,7 +7,8 @@ def get_event_and_exposition_by_id(event_id):
             host='localhost',
             user='postgres',
             password='', # Clave para acceder a la base de datos
-            database='concesionaria'
+            database='concesionaria',
+            port = "" # En caso de tener versiones diferentes de sql usar el puerto de la version.
         )
 
         cursor = connection.cursor()

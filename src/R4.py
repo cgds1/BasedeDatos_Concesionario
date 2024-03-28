@@ -6,7 +6,8 @@ try:
         host='localhost',
         user='postgres',
         password='', # Clave para acceseder a la base de datos
-        database='concesionaria'
+        database='concesionaria',
+        port = "" # En caso de tener versiones diferentes de sql usar el puerto de la version.
     )
 
     print("Conexión exitosa.")
