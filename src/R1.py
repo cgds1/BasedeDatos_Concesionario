@@ -12,7 +12,7 @@ def main():
         connection = psycopg2.connect(
             host="localhost", 
             user="postgres",
-            password="", # Clave para acceder a la base de datos
+            password="123", # Clave para acceder a la base de datos
             database="concesionaria",
             port = "" # En caso de tener versiones diferentes de sql usar el puerto de la version.
         )
@@ -26,7 +26,13 @@ def main():
 
             if opcion == "1":
             
-                id_factura = input("Introduce el ID de la factura: ")
+                cursor.execute("SELECT MAX(id_factura) FROM factura")
+                id_factura = cursor.fetchone()[0]
+                if id_factura is None:
+                    id_factura = 1
+                else:
+                    id_factura += 1
+                    
                 ci_empleado = input("Cedula del empleado: ")
                 id_cliente = input("Introduce el ID del cliente: ")
                 tipo_factura = input("Introduce el tipo (Compra o Venta): ")
