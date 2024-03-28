@@ -1,11 +1,8 @@
 # DISEÑO Y APLICACIÓN DE UNA CONSECIONARIA.
-## Requisitos:
-
--- Requisitos --
 
 - [x] borrar, crear, modificar de una compra o venta.
 
-- [ ] ver las estadisticas de vehiculos comprados y vendidos (dias mes o años).
+- [x] ver las estadisticas de vehiculos comprados y vendidos (dias mes o años).
 
 - [x] mostrar los datos del dueño actual o anterios del vehiculo correspondiente.
 
