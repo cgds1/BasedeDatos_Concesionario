@@ -29,7 +29,8 @@ CREATE TABLE Ente (
 CREATE TABLE Seguro (
     id_seguro BIGSERIAL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    porcentaje DECIMAL(5, 2) NOT NULL
+    descripcion VARCHAR(50) NOT NULL,
+    costo_mensual DECIMAL(6, 2) NOT NULL
 );
 
 CREATE TABLE Taller (
