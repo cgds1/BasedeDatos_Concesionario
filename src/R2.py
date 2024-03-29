@@ -81,9 +81,12 @@ def main():
                 break
             else:
                 print("Opción no válida. Por favor, elige una opción del menú.")
+        
+        connection.close()
                 
                 
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))
+        connection.close()
         
 main()

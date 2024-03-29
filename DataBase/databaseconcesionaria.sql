@@ -55,7 +55,9 @@ CREATE TABLE Carrera (
     numero_vueltas INT NOT NULL,
     nombre_carrera VARCHAR(50) NOT NULL,
     nombre_circuito VARCHAR(50) NOT NULL,
-    tipo_carrera VARCHAR(50) NOT NULL
+    tipo_carrera VARCHAR(50) NOT NULL,
+    premio INT NOT NULL,
+    fecha DATE NOT NULL
 );
 
 CREATE TABLE Piloto (
