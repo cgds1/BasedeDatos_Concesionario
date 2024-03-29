@@ -7,7 +7,7 @@ def menu():
     print("\n--     Reporte de ganancias del mes    --")
     print("1. Evento ")
     print("2. Carreras ")
-    print("3. Seguro ")
+    print("3. Seguro y ventas ")
     print("4. Salir ")
      
 def main():
@@ -89,6 +89,39 @@ def main():
                 pass
                 
             elif x == "3":
+                mesus = input("\nIngrese el mes a elegir: ")
+                yearus = input("Ingrese el año a elegir: ")
+                cursor = connection.cursor()
+                cursor.execute(f"SELECT * FROM factura WHERE extract(year from dia) = {mesus} AND extract(month from dia) = {yearus};")
+                datos = cursor.fetchall()
+                
+                id_factura = []
+                
+                for row in datos:
+                    id_factura.append(row[0])
+                
+                cadena = str(id_factura)[1:-1]
+                
+                cursor.execute(f"SELECT * FROM detalle WHERE id_factura IN {cadena}")
+                datos1 = cursor.fetchall()
+                
+                id_detalle = []
+                
+                for row in datos1:
+                    id_detalle.append(row[0])
+            
+                cadena1 = str(id_detalle)[1:-1]
+                    
+                cursor.execute(f"SELECT * FROM detalle_total WHERE id_detalle IN {cadena1}")
+                datos2 = cursor.fetchall()
+                
+                precio_ventas = 0
+                
+                for row in datos2:
+                    precio_ventas += row[1]
+                    
+                print(f"Estas son las ventas totales en el mes {mesus} y el año {yearus}: {precio_ventas}")
+                
                 pass
             
     except DatabaseError as ex:
