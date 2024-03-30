@@ -1,0 +1,10 @@
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (1, 'ZHWGU5BZ8CL743589', 'Compra');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (2, 'W04G15GV0B1165158', 'Compra');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (1, 'WBS3U9C56FJ229954', 'Venta');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (2, '5GADV33W37D282434', 'Venta');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (1, 'JTDKN3DPXD3917244', 'Compra');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (2, 'JHMFA3F27BS954557', 'Compra');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (1, '5FNRL5H26DB065072', 'Venta');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (2, 'WBAHL83566D934999', 'Venta');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (1, '1G4PS5SKXE4426925', 'Compra');
+insert into EXPOSICION_EVENTO (id_evento, vin_vehiculo, tipo_transaccion) values (2, '1G6KD54Y35U702942', 'Compra');

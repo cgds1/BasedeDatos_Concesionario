@@ -30,7 +30,7 @@ Solo administradores.
 
 - [ ] Si un vehículo se pagará en cuotas, mostrar cuantas cuotas serían y cuanto faltaría por pagar.
 
-- [ ] Hacer un reporte de ganancias del mes en eventos, carreras, seguro y ventas
+- [x] Hacer un reporte de ganancias del mes en eventos, carreras, seguro y ventas
 
 - [ ] Dar la opción de aplicar rebajas a vehículos cuyas fechas de comprados sean mayores a dos años, pero no se han vendido aún.
 

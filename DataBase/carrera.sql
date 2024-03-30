@@ -1,0 +1,10 @@
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (1, 7, 'Nigeria', 'Nassarawa', 'NASCAR', 50000, '2024-01-15');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (2, 5, 'Sweden', 'Stockholm', 'Formula 1', 51025, '2015-04-14');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (3, 6, 'Colombia', 'Nuquí', 'Rally', 10230, '2001-05-10');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (4, 2, 'Indonesia', 'Nagrog Wetan', 'Acelaracion', 902384, '2004-10-13');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (5, 6, 'United States', 'Saint Petersburg', 'Rally', 908020, '2021-10-15');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (6, 5, 'Indonesia', 'Tapakrejo', 'NASCAR', 5349028, '2022-10-16');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (7, 1, 'Indonesia', 'Gunungmenang', 'Rally raid', 54039, '2023-10-26');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (8, 4, 'Finland', 'Kalvola', 'Formula 1', 3402956, '2015-10-25');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (9, 5, 'China', 'Huaqiao', 'Turismo', 29342058, '2016-10-27');
+insert into carrera (id_carrera, numero_vueltas, nombre_carrera, nombre_circuito, tipo_carrera, premio, fecha) values (10, 3, 'Indonesia', 'Mekarsari', 'Rally', 2394085, '2012-10-16');

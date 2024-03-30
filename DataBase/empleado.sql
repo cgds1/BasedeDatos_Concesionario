@@ -1,0 +1,10 @@
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (24924994, 31, 'Ingar', 'Chorlton', 'Gerente', 312);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (25389266, 32, 'Cassie', 'Pedlow', 'Vendedor', 375);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (20659655, 33, 'Jo-anne', 'Thomtson', 'Vendedor', 429);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (25579240, 34, 'Isabel', 'Maybury', 'Gerente', 321);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (24052324, 35, 'Karen', 'Hale', 'Gerente', 695);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (27505335, 36, 'Emmalee', 'Calvie', 'Vendedor', 406);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (22210344, 37, 'Ilario', 'Olek', 'Caja', 334);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (21719788, 38, 'Jayne', 'MacDowal', 'Gerente', 727);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (28255660, 39, 'Dag', 'Rallings', 'Vendedor', 390);
+insert into empleado (ci_empleado, id_ente, nombre, apellido, cargo, sueldo) values (24539640, 40, 'Gay', 'Yonge', 'Gerente', 471);
