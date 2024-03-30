@@ -11,9 +11,9 @@
 - [ ] Crear una sección para administrar la participación de un carro en un evento o carrera, 
 además del equipo para la carrera junto al taller que hara de pits.
 
-- [ ] Administrar la compra de seguro de los clientes.
+- [x] Administrar la compra de seguro de los clientes.
 
-- [ ] Mostrar los repuestos necesarios para un carro junto a la descripción
+- [x] Mostrar los repuestos necesarios para un carro junto a la descripción
 dada por el taller de las reparaciones. Indicar por cada pieza el proveedor.
 
 - [ ] Mostrar los premios que ha ganado un carro si participo en un evento

@@ -1,0 +1,15 @@
+insert into repuesto (numero_parte, nombre) values (1, 'Frenos (pastillas, discos, cilindros, etc.)');
+insert into repuesto (numero_parte, nombre) values (2, 'Sistema de escape (silenciadores, tubos, catalizadores)');
+insert into repuesto (numero_parte, nombre) values (3, 'Suspension (amortiguadores, resortes, brazos de control)');
+insert into repuesto (numero_parte, nombre) values (4, 'Transmision (embrague, caja de cambios, juntas)');
+insert into repuesto (numero_parte, nombre) values (5, 'Motor (bujias, filtro de aire, correas, aceite');
+insert into repuesto (numero_parte, nombre) values (6, 'Sistema de direccion (bomba de direccion asistida, cremallera)');
+insert into repuesto (numero_parte, nombre) values (7, 'Radiador y sistema de enfriamiento (mangueras, termostato, bomba de agua)');
+insert into repuesto (numero_parte, nombre) values (8, 'Luces (bombillas, conexiones electricas)');
+insert into repuesto (numero_parte, nombre) values (9, 'Parabrisas y vidrios (reparacion de grietas, cambio de vidrio)');
+insert into repuesto (numero_parte, nombre) values (10, 'Bateria (cambio, limpieza de bornes)');
+insert into repuesto (numero_parte, nombre) values (11, 'Alternador y sistema electrico (cables, fusibles)');
+insert into repuesto (numero_parte, nombre) values (12, 'Neumaticos (reparacion de pinchazos, alineacion, balanceo)');
+insert into repuesto (numero_parte, nombre) values (13, 'Sistema de climatizacion (recarga de gas, reparacion de fugas)');
+insert into repuesto (numero_parte, nombre) values (14, 'Sistema de combustible (filtro de gasolina, inyectores)');
+insert into repuesto (numero_parte, nombre) values (15, 'Sistema de encendido (distribuidor, bobinas de encendido)');

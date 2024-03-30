@@ -200,6 +200,7 @@ CREATE TABLE Propietario_Vehiculo (
 );
 
 CREATE TABLE Repuesto_Suministrado (
+    id_RSuministrado BIGINT NOT NULL PRIMARY KEY,
     rif_taller VARCHAR(50) NOT NULL,
     rif_proveedor VARCHAR(50) NOT NULL,
     numero_parte VARCHAR(25) NOT NULL,
@@ -210,10 +211,10 @@ CREATE TABLE Repuesto_Suministrado (
 );
 
 CREATE TABLE Vehiculo_Reparado (
+    id_RSuministrado BIGINT NOT NULL PRIMARY KEY,
     vin_vehiculo VARCHAR(50) NOT NULL,
-    rif_proveedor VARCHAR(50) NOT NULL,
+    FOREIGN KEY (id_RSuministrado) REFERENCES Repuesto_Suministrado(id_RSuministrado),
     FOREIGN KEY (vin_vehiculo) REFERENCES Vehiculo(vin_vehiculo),
-    FOREIGN KEY (rif_proveedor) REFERENCES Proveedor(rif_proveedor)
 );
 
 CREATE TABLE Vehiculo_Distribuido (        

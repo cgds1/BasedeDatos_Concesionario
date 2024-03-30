@@ -1,0 +1,10 @@
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (1, 'J9676531', 'J3583596', 10, 1);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (2, 'J5197784', 'J7457316', 3, 2);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (3, 'J5197784', 'J8442058', 14, 1);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (4, 'J2315509', 'J3583596', 14, 2);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (5, 'J5197784', 'J3583596', 1, 1);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (6, 'J9605683', 'J3583596', 13, 2);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (7, 'J3777643', 'J8442058', 3, 1);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (8, 'J9605683', 'J2367277', 8, 2);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (9, 'J3777643', 'J7457316', 4, 1);
+insert into repuesto_suministrado (id_rsuministrado, rif_taller, rif_proveedor, numero_parte, cantidad) values (10, 'J5197784', 'J3583596', 15, 2);
