@@ -1,0 +1,10 @@
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (1, 'ZHWGU5BZ8CL743589');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (2, 'WBS3U9C56FJ229954');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (3, 'W04G15GV0B1165158');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (4, '5GADV33W37D282434');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (5, 'JTDKN3DPXD3917244');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (6, 'JHMFA3F27BS954557');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (7, '5FNRL5H26DB065072');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (8, '1G4PS5SKXE4426925');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (9, 'WBAHL83566D934999');
+insert into vehiculo_reparado (id_rsuministrado, vin_vehiculo) values (10, '1G6KD54Y35U702942');
