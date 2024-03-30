@@ -175,7 +175,7 @@ def main():
                 except:
                     print("No existe registro de ese mes. ")
                     
-            elif x == 5:
+            elif x == "5" :
                 print("Bye bye!")
                 break
             
