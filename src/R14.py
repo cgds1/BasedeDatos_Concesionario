@@ -158,7 +158,7 @@ def main():
                     id_seguro_copy = id_seguro
                     count = len(id_seguro_copy)
 
-                    
+
                     for elemento in range(count):
                         if id_seguro_copy[elemento] == 1:
                             precio_total += 200
@@ -174,6 +174,10 @@ def main():
                     print(precio_total)
                 except:
                     print("No existe registro de ese mes. ")
+                    
+            elif x == 5:
+                print("Bye bye!")
+                break
             
             
     except DatabaseError as ex:
