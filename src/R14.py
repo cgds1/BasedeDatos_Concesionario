@@ -160,7 +160,6 @@ def main():
 
                     
                     for elemento in range(count):
-                        print(id_seguro_copy[elemento])
                         if id_seguro_copy[elemento] == 1:
                             precio_total += 200
                         elif id_seguro_copy[elemento] == 2:
