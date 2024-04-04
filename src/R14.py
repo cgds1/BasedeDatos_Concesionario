@@ -14,13 +14,10 @@ def menu():
 def main():
     
     try:
-        connection = psycopg2.connect(
-                host='localhost', 
-                user='postgres',
-                password='123', # Clave para acceder a la base de datos
-                database='concesionaria',
-                port = "5433" # En caso de tener versiones diferentes de sql usar el puerto de la version.
-        )
+        
+        connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
+        
+        connection = psycopg2.connect(connection_string)
         print("Conexión exitosa. ")
         
         while True:
