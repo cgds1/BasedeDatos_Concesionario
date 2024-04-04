@@ -214,7 +214,7 @@ CREATE TABLE Vehiculo_Reparado (
     id_RSuministrado BIGINT NOT NULL PRIMARY KEY,
     vin_vehiculo VARCHAR(50) NOT NULL,
     FOREIGN KEY (id_RSuministrado) REFERENCES Repuesto_Suministrado(id_RSuministrado),
-    FOREIGN KEY (vin_vehiculo) REFERENCES Vehiculo(vin_vehiculo),
+    FOREIGN KEY (vin_vehiculo) REFERENCES Vehiculo(vin_vehiculo)
 );
 
 CREATE TABLE Vehiculo_Distribuido (        
