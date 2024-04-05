@@ -1,5 +1,6 @@
 import psycopg2
 from psycopg2 import DatabaseError
+from tabulate import tabulate
 
 def get_event_and_exposition_by_id(event_id):
     try:
@@ -13,16 +14,21 @@ def get_event_and_exposition_by_id(event_id):
         row = cursor.fetchone()
         if row is not None:
             print(f"Detalles del evento {event_id}:")
-            print(row)
+            for dato in row:
+                print(f"{dato} | ", end=" ")
         else:
             print(f"No se encontró ningún evento con el ID {event_id}")
 
         # Consulta para obtener las transacciones de la exposición del evento
         cursor.execute(f"SELECT * FROM EXPOSICION_EVENTO WHERE id_evento = {event_id}")
         rows = cursor.fetchall()
-        print(f"Transacciones de la exposición del evento {event_id}:")
-        for row in rows:
-            print(row)
+        print(f"\nTransacciones de la exposición del evento {event_id}:")
+        
+        column_names = [description[0] for description in cursor.description]
+        tabla = tabulate(rows, headers= column_names, tablefmt="psql")
+        print(tabla)
+
+        
 
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))

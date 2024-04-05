@@ -12,12 +12,10 @@ def menu():
     print("5. Salir ")
      
 def main():
-    
     try:
-        
         connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
-        
         connection = psycopg2.connect(connection_string)
+        cursor = connection.cursor()
         print("Conexión exitosa. ")
         
         while True:
@@ -28,11 +26,9 @@ def main():
                 try:
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
-                    cursor = connection.cursor()
                 
                     cursor.execute(f"SELECT * FROM evento WHERE extract(month FROM fecha) = {mesus} AND extract(year FROM fecha) = {yearus};")
                 
-                    print("No hubo ganancias ese mes. ")
                     print(f"\nCarros vendidos en el mes {mesus} y del año {yearus}")
                     datos = cursor.fetchall()
             
@@ -74,7 +70,6 @@ def main():
                 try:
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
-                    cursor = connection.cursor()
                     cursor.execute(f"SELECT * FROM carrera WHERE extract(month FROM fecha) = {mesus} AND extract(year FROM fecha) = {yearus};")
                     datos = cursor.fetchall()
                 
@@ -96,7 +91,6 @@ def main():
                 try:
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
-                    cursor = connection.cursor()
                     cursor.execute(f"SELECT * FROM factura WHERE extract(year from dia) = {yearus} AND extract(month from dia) = {mesus};")
                     datos = cursor.fetchall()
                 
@@ -132,7 +126,6 @@ def main():
                 try:
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
-                    cursor = connection.cursor()
                     cursor.execute(f"SELECT * FROM factura WHERE extract(year from dia) = {yearus} AND extract(month from dia) = {mesus};")
                     datos = cursor.fetchall()
                     
