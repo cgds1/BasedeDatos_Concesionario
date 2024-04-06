@@ -255,3 +255,9 @@ CREATE TABLE Exposicion_Evento (
     FOREIGN KEY (id_evento) REFERENCES Evento(id_evento) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (vin_vehiculo) REFERENCES Vehiculo(vin_vehiculo) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+CREATE TABLE admin(
+    id_admin SERIAL PRIMARY KEY,
+    usuario VARCHAR(25),
+    password VARCHAR(25)
+);
