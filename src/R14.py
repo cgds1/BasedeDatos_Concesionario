@@ -1,6 +1,7 @@
 import psycopg2
 from psycopg2 import DatabaseError
 import os
+from tabulate import tabulate
 
 # Hacer un reporte de ganancias del mes en eventos, carreras, seguro y ventas #
 
@@ -9,6 +10,10 @@ def cls():
         os.system("cls")
     else: 
         os.system("clear")
+        
+def presiona(x):
+    x = input("Presiona para continuar...")
+    cls()
 
 def menu():
     print("\n--     Reporte de ganancias del mes    --")
@@ -31,9 +36,15 @@ def main():
             
             if x == "1":
                 try:
+                    cursor.execute(f"SELECT * FROM evento")
+                    datos = cursor.fetchall()
+                    
+                    column_names = [description[0] for description in cursor.description]
+                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                    print(tabla)
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
-                
+                    cls()
                     cursor.execute(f"SELECT * FROM evento WHERE extract(month FROM fecha) = {mesus} AND extract(year FROM fecha) = {yearus};")
                 
                     print(f"\nCarros vendidos en el mes {mesus} y del año {yearus}")
@@ -59,8 +70,9 @@ def main():
                     cursor.execute(f"SELECT * FROM vehiculo WHERE vin_vehiculo IN ({cadena1})")
                     datos2 = cursor.fetchall()
             
-                    for row in datos2:
-                        print(f"{row[0]} | {row[1]} | {row[2]} | {row[3]} | {row[4]} | {row[5]}")
+                    column_names = [description[0] for description in cursor.description]
+                    tabla = tabulate(datos2, headers= column_names, tablefmt="psql")
+                    print(tabla)
                 
                     precio_evento = 0
             
@@ -68,13 +80,25 @@ def main():
                         precio_evento += row[2]
                     
                     print(f"\nPrecio total de ventas en los eventos: {precio_evento}")
+                    x1 = None
+                    presiona(x1)
                     pass
                 
                 except:
                     print("No existe registro de ese mes. ")
+                    x1 = None
+                    presiona(x1)
             
             elif x == "2":
                 try:
+                    
+                    cursor.execute(f"SELECT * FROM carrera")
+                    datos = cursor.fetchall()
+                    
+                    column_names = [description[0] for description in cursor.description]
+                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                    print(tabla)
+                    
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
                     cursor.execute(f"SELECT * FROM carrera WHERE extract(month FROM fecha) = {mesus} AND extract(year FROM fecha) = {yearus};")
@@ -87,15 +111,29 @@ def main():
                 
                     if precio_carrera == 0:
                         print("No hubo carreras ganadas ese mes. ")
+                        x1 = None
+                        presiona(x1)
                     
                     else:    
                         print(f"\nPrecio total de dinero ganado en carreras: {precio_carrera}")
+                        x1 = None
+                        presiona(x1)
                     pass
                 except:
                     print("No existe registro de ese mes. ")
+                    x1 = None
+                    presiona(x1)
                     
             elif x == "3":
                 try:
+                    
+                    cursor.execute(f"SELECT * FROM factura")
+                    datos = cursor.fetchall()
+                    
+                    column_names = [description[0] for description in cursor.description]
+                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                    print(tabla)
+                    
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
                     cursor.execute(f"SELECT * FROM factura WHERE extract(year from dia) = {yearus} AND extract(month from dia) = {mesus};")
@@ -126,11 +164,23 @@ def main():
                     for row in datos2:
                         precio_ventas += row[1]
                     print(f"Estas son las ventas totales en el mes {mesus} y el año {yearus}: {precio_ventas}")
+                    x1 = None
+                    presiona(x1)
                 except:
                     print("No existe registro de ese mes. ")
+                    x1 = None
+                    presiona(x1)
                 pass
             elif x == "4":
                 try:
+                    
+                    cursor.execute(f"SELECT * FROM factura")
+                    datos = cursor.fetchall()
+                    
+                    column_names = [description[0] for description in cursor.description]
+                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                    print(tabla)
+                    
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
                     cursor.execute(f"SELECT * FROM factura WHERE extract(year from dia) = {yearus} AND extract(month from dia) = {mesus};")
@@ -168,9 +218,13 @@ def main():
                         elif id_seguro_copy[elemento] == 5:
                             precio_total += 0
                             
-                    print(precio_total)
+                    print(f"El precio total en seguros en el mes de {mesus} con el año {yearus} es de: {precio_total}")
+                    x1 = None
+                    presiona(x1)
                 except:
                     print("No existe registro de ese mes. ")
+                    x1 = None
+                    presiona(x1)
                     
             elif x == "5" :
                 print("Bye bye!")
