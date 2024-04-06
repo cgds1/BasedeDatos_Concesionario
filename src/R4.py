@@ -1,46 +1,53 @@
 import psycopg2
 from psycopg2 import DatabaseError
+import os
 
-try:
-    connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"    
-    connection = psycopg2.connect(connection_string)
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
+        
+def main():
+    try:
+        connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"    
+        connection = psycopg2.connect(connection_string)
+        cursor = connection.cursor()
+        cls()
+        
+        print("vin_vehiculo | marca | modelo | ci_empleado | nombre_empleado | tipo_factura | ci_cliente_natural | nombre_cliente_natural")
 
-    print("Conexión exitosa.")
-    cursor = connection.cursor()
-    
-    print("vin_vehiculo | marca | modelo | ci_empleado | nombre_empleado | tipo_factura | ci_cliente_natural | nombre_cliente_natural")
+        cursor.execute("""
+            SELECT 
+                v.vin_vehiculo,
+                d.marca,
+                d.modelo,
+                e.ci_empleado,
+                e.nombre AS nombre_empleado,
+                f.tipo_factura,
+                cn.ci_cliente_natural,
+                cn.nombre AS nombre_cliente_natural
+            FROM 
+                factura f
+            JOIN 
+                detalle dt ON f.id_factura = dt.id_factura
+            JOIN 
+                vehiculo v ON dt.vin_vehiculo = v.vin_vehiculo
+            JOIN 
+                descripcion_vehiculo d ON v.id_descripcion = d.id_descripcion
+            JOIN 
+                empleado e ON f.ci_empleado = e.ci_empleado
+            LEFT JOIN 
+                cliente_natural cn ON f.id_cliente = cn.id_cliente
+            LIMIT 20;
+        """)
+        rows = cursor.fetchall()
+        for row in rows:
+            print(row)
 
-    cursor.execute("""
-        SELECT 
-            v.vin_vehiculo,
-            d.marca,
-            d.modelo,
-            e.ci_empleado,
-            e.nombre AS nombre_empleado,
-            f.tipo_factura,
-            cn.ci_cliente_natural,
-            cn.nombre AS nombre_cliente_natural
-        FROM 
-            factura f
-        JOIN 
-            detalle dt ON f.id_factura = dt.id_factura
-        JOIN 
-            vehiculo v ON dt.vin_vehiculo = v.vin_vehiculo
-        JOIN 
-            descripcion_vehiculo d ON v.id_descripcion = d.id_descripcion
-        JOIN 
-            empleado e ON f.ci_empleado = e.ci_empleado
-        LEFT JOIN 
-            cliente_natural cn ON f.id_cliente = cn.id_cliente
-        LIMIT 20;
-    """)
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    except DatabaseError as ex:
+        print("Error durante la conexión: {}".format(ex))
 
-except DatabaseError as ex:
-    print("Error durante la conexión: {}".format(ex))
-
-finally:
-    connection.close()  # Se cerró la conexión a la BD.
-    print("La conexión ha finalizado.")
+    finally:
+        connection.close()  # Se cerró la conexión a la BD.
+        print("La conexión ha finalizado.")

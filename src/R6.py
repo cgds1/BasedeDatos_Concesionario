@@ -1,5 +1,6 @@
 import psycopg2
 from psycopg2 import DatabaseError
+import os
 
 def menu():
     print("1. Mostrar clientes con seguro")
@@ -38,27 +39,33 @@ def modificar_seguro_de_cliente(cursor, connection):
     cursor.execute(f"UPDATE detalle SET id_seguro = {nuevo_id_seguro} WHERE id_detalle = {id_detalle}")
     connection.commit()
     print("Seguro de cliente modificado con éxito.")
+    
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
+        
+def main():
+    try:
+        connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
+        connection = psycopg2.connect(connection_string)
+        cursor = connection.cursor()
+        cls()
+        
+        while True:
+            opcion = menu()
+            if opcion == '1':
+                mostrar_clientes_con_seguro(cursor)
+            elif opcion == '2':
+                modificar_seguro_de_cliente(cursor, connection)
+            elif opcion == '3':
+                break
+            else:
+                print("Opción no válida. Por favor, intente de nuevo.")
 
-try:
-    connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
-    connection = psycopg2.connect(connection_string)
-
-    print("Conexión exitosa.")
-    cursor = connection.cursor()
-
-    while True:
-        opcion = menu()
-        if opcion == '1':
-            mostrar_clientes_con_seguro(cursor)
-        elif opcion == '2':
-            modificar_seguro_de_cliente(cursor, connection)
-        elif opcion == '3':
-            break
-        else:
-            print("Opción no válida. Por favor, intente de nuevo.")
-
-except DatabaseError as ex:
-    print("Error durante la conexión: {}".format(ex))
-finally:
-    connection.close()  # Se cerró la conexión a la BD.
-    print("La conexión ha finalizado.")
+    except DatabaseError as ex:
+        print("Error durante la conexión: {}".format(ex))
+    finally:
+        connection.close()  # Se cerró la conexión a la BD.
+        print("La conexión ha finalizado.")

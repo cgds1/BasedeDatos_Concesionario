@@ -1426,5 +1426,3 @@ def main():
 
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))
-
-main()

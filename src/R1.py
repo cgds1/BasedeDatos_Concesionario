@@ -1,24 +1,30 @@
 import psycopg2
 from psycopg2 import DatabaseError
+import os
 
 def mostrar_menu():
     print("1. Crear una factura")
     print("2. Modificar una factura")
     print("3. Borrar una factura")
     print("4. Salir")
+    
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
 
 def main():
     try:
         connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
         connection = psycopg2.connect(connection_string)
-
-        print(f"Conexión exitosa.")
         cursor = connection.cursor()
 
         while True:
             mostrar_menu()
             opcion = input("Por favor, elige una opción: ")
-
+            cls()
+            
             if opcion == "1":
             
                 cursor.execute("SELECT MAX(id_factura) FROM factura")
@@ -82,5 +88,3 @@ def main():
         connection.close()  # Se cerró la conexión a la BD.
         print("La conexión ha finalizado.")
 
-if __name__ == "__main__":
-    main()

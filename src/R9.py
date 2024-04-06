@@ -1,6 +1,13 @@
 import psycopg2
 from psycopg2 import DatabaseError
 from tabulate import tabulate
+import os
+
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
 
 def get_event_and_exposition_by_id(event_id):
     try:
@@ -40,13 +47,12 @@ def main():
         print("\n1. Ver detalles de un evento y su exposición")
         print("2. Salir")
         option = input("Por favor, elige una opción: ")
+        cls()
         if option == '1':
             event_id = input("Por favor, introduce el ID del evento: ")
+            cls()
             get_event_and_exposition_by_id(event_id)
         elif option == '2':
             break
         else:
             print("Opción no válida. Por favor, intenta de nuevo.")
-
-if __name__ == "__main__":
-    main()

@@ -1,7 +1,14 @@
 import psycopg2
 from psycopg2 import DatabaseError
+import os
 
 # Hacer un reporte de ganancias del mes en eventos, carreras, seguro y ventas #
+
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
 
 def menu():
     print("\n--     Reporte de ganancias del mes    --")
@@ -16,11 +23,11 @@ def main():
         connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
         connection = psycopg2.connect(connection_string)
         cursor = connection.cursor()
-        print("Conexión exitosa. ")
         
         while True:
             menu()
             x = input("Por favor, Ingresa una opcion: ")
+            cls()
             
             if x == "1":
                 try:
@@ -172,9 +179,6 @@ def main():
             
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))
-        
-        
-main()
 
     
     

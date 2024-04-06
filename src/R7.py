@@ -1,5 +1,6 @@
 import psycopg2
-from psycopg2 import DatabaseError 
+from psycopg2 import DatabaseError
+import os
 
 def menu():
     print("1. Ver todos los datos")
@@ -7,6 +8,12 @@ def menu():
     print("3. Salir")
     opcion = input("Seleccione una opción: ")
     return opcion
+
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
 
 def ver_todos_los_datos(cursor):
     cursor.execute("SELECT * FROM vehiculo_reparado")
@@ -55,26 +62,26 @@ def ver_datos_por_id(cursor):
     else:
         print("No se encontraron datos con ese ID.")
 
-try:
-    connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
-    connection = psycopg2.connect(connection_string)
+def main():
+    try:
+        connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
+        connection = psycopg2.connect(connection_string)
+        cursor = connection.cursor()
+        cls()
+        
+        while True:
+            opcion = menu()
+            if opcion == '1':
+                ver_todos_los_datos(cursor)
+            elif opcion == '2':
+                ver_datos_por_id(cursor)
+            elif opcion == '3':
+                break
+            else:
+                print("Opción no válida. Por favor, intente de nuevo.")
 
-    print("Conexión exitosa.")
-    cursor = connection.cursor()
-
-    while True:
-        opcion = menu()
-        if opcion == '1':
-            ver_todos_los_datos(cursor)
-        elif opcion == '2':
-            ver_datos_por_id(cursor)
-        elif opcion == '3':
-            break
-        else:
-            print("Opción no válida. Por favor, intente de nuevo.")
-
-except DatabaseError as ex:
-    print("Error durante la conexión: {}".format(ex))
-finally:
-    connection.close()  # Se cerró la conexión a la BD.
-    print("La conexión ha finalizado.")
+    except DatabaseError as ex:
+        print("Error durante la conexión: {}".format(ex))
+    finally:
+        connection.close()  # Se cerró la conexión a la BD.
+        print("La conexión ha finalizado.")

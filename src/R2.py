@@ -1,5 +1,6 @@
 import psycopg2
 from psycopg2 import DatabaseError
+import os
 
 def menu():
     print("-- Estadisticas de vehiculos comprados. --")
@@ -7,19 +8,24 @@ def menu():
     print("   2. Mes   ")
     print("   3. Año   ")
     print("   4. Salir ")
+    
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else: 
+        os.system("clear")
 
 def main():
     
     try:
         connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"
         connection = psycopg2.connect(connection_string)
-        
-        print("Conexión exitosa.")
 
         while True:
             menu()
             x = input("Por favor, elige una opción: ")
             cursor = connection.cursor()
+            cls()
             
             if x == "1":    
                 print("-- Datos del dia especifico --")
@@ -84,5 +90,3 @@ def main():
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))
         connection.close()
-        
-main()
