@@ -100,7 +100,6 @@ def main():
                 print("Factura borrada con éxito.")
 
             elif opcion == "4":
-                print("Has elegido salir. ¡Hasta luego!")
                 break
 
             else:

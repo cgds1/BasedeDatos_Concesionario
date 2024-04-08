@@ -236,7 +236,6 @@ def main():
                     presiona(x1)
                     
             elif x == "5" :
-                print("Bye bye!")
                 break
             
             

@@ -15,6 +15,10 @@ def cls():
     else: 
         os.system("clear")
 
+def presiona(x):
+    x = input("Presiona para continuar...")
+    cls()
+
 def main():
     
     try:
@@ -37,13 +41,22 @@ def main():
                 text2 = "Venta"
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND extract(month FROM dia) = {monthus} AND extract(day FROM dia) = {dayus} AND tipo_factura ILIKE '%{text1}%';")
                 datos = cursor.fetchall()
-                for row in datos:
-                    print(f"El dia {yearus}-{monthus}-{dayus} se ha comprado una cantidad de: {row[0]}")
-                    
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND extract(month FROM dia) = {monthus} AND extract(day FROM dia) = {dayus} AND tipo_factura ILIKE '%{text2}%';")
-                datos = cursor.fetchall()
+                datos1 = cursor.fetchall()
                 for row in datos:
+                    x = row[0]
+                for row in datos1:
+                    y = row[0]
+                if x == 0 and y == 0:
+                    print("No hay registro de ese día...")
+                else:
+                    for row in datos:
+                        print(f"El dia {yearus}-{monthus}-{dayus} se ha comprado una cantidad de: {row[0]}")
+                        
+                    for row in datos:
                         print(f"El dia {yearus}-{monthus}-{dayus} se ha vendido una cantidad de: {row[0]}")
+                x1 = None
+                presiona(x1)
                 
             elif x == "2":
                 print("-- Datos del mes especifico --")
@@ -54,13 +67,24 @@ def main():
                 text2 = "Venta"
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND extract(month FROM dia) = {monthus} AND tipo_factura ILIKE '%{text1}%';")
                 datos = cursor.fetchall()
-                for row in datos:
-                    print(f"El dia {yearus}-{monthus} se ha comprado una cantidad de: {row[0]}")
-                    
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND extract(month FROM dia) = {monthus} AND tipo_factura ILIKE '%{text2}%';")
-                datos = cursor.fetchall()
+                datos1 = cursor.fetchall()
                 for row in datos:
-                        print(f"El dia {yearus}-{monthus} se ha vendido una cantidad de: {row[0]}")
+                    x = row[0]
+                for row in datos1:
+                    y = row[0]
+
+                if x == 0 and y == 0:
+                    print("No hay registro de ese mes...")
+                else:
+                    for row in datos:
+                        print(f"El mes {yearus}-{monthus} se ha comprado una cantidad de: {row[0]}")
+                        
+                    for row in datos1:
+                        print(f"El mes {yearus}-{monthus} se ha vendido una cantidad de: {row[0]}")
+                    
+                x1 = None
+                presiona(x1)
                 
             elif x == "3":
                 print("-- Datos del año especifico --")
@@ -70,16 +94,25 @@ def main():
                 text2 = "Venta"
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND tipo_factura ILIKE '%{text1}%';")
                 datos = cursor.fetchall()
-                for row in datos:
-                    print(f"El dia {yearus} se ha comprado una cantidad de: {row[0]}")
-                    
                 cursor.execute(f"SELECT COUNT(*) AS total_filas FROM factura WHERE extract(year FROM dia) = {yearus} AND tipo_factura ILIKE '%{text2}%';")
-                datos = cursor.fetchall()
+                datos1 = cursor.fetchall()
                 for row in datos:
-                        print(f"El dia {yearus} se ha vendido una cantidad de: {row[0]}")
+                    x = row[0]
+                for row in datos1:
+                    y = row[0]
+                if x == 0 and y == 0:
+                    print("No hay registro de ese año... ")
+                else:
+                    for row in datos:
+                        print(f"El año {yearus} se ha comprado una cantidad de: {row[0]}")
                         
+                    for row in datos:
+                        print(f"El año {yearus} se ha vendido una cantidad de: {row[0]}")
+                    
+                x1 = None
+                presiona(x1)
+
             elif x == "4":
-                print("Has elegido salir. ¡Hasta luego!")
                 break
             else:
                 print("Opción no válida. Por favor, elige una opción del menú.")
