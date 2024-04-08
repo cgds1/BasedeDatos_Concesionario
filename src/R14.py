@@ -129,7 +129,7 @@ def main():
                     presiona(x1)
                     
             elif x == "3":
-                #try:
+                try:
                     
                     cursor.execute(f"SELECT * FROM factura")
                     datos = cursor.fetchall()
@@ -173,11 +173,11 @@ def main():
                     print(f"Estas son las ventas totales en el mes {mesus} y el año {yearus}: {precio_ventas}")
                     x1 = None
                     presiona(x1)
-                #except:
+                except:
                     print("No existe registro de ese mes. ")
                     x1 = None
                     presiona(x1)
-                #pass
+                pass
             elif x == "4":
                 try:
                     

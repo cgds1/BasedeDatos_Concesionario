@@ -119,6 +119,7 @@ def main():
                                         nuevo_vin = input("Ingrese su nuevo VIM: ")
                                         cursor.execute(f"UPDATE vehiculo SET vin_vehiculo = '{nuevo_vin}' WHERE vin_vehiculo = '{vin}'")
                                         connection.commit()
+                                        break
 
                                     except:
                                         print("Error en la actualizacion de datos. ")
