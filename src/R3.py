@@ -67,5 +67,3 @@ def main():
 
     finally:
         connection.close()
-
-main()
