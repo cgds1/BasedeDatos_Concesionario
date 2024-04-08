@@ -15,7 +15,7 @@ def main():
             option = int(input("Ingrese su opcion: "))
             system("cls")
             if option == 1:
-                matricula = input("Ingrese la matricula del vehiculo a consultar: ")
+                matricula = input("Ingrese el numero de chasis del vehiculo a consultar: ")
                 cursor.execute(f'''select ci_cliente_natural, nombre, apellido, (select telefono from ente as c where c.id_ente = a.id_cliente),
                 (select direccion from ente as c where c.id_ente = a.id_cliente), b.propietario_actual from cliente_natural as a
                 inner join propietario_vehiculo as b
@@ -36,7 +36,7 @@ def main():
                 print("Pulse una tecla para continuar...")
                 input()
             elif option == 2:
-                matricula = input("Ingrese la matricula del vehiculo a consultar: ")
+                matricula = input("Ingrese el numero de chasis del vehiculo a consultar: ")
                 cursor.execute(f'''select rif, nombre, (select telefono from ente as c where c.id_ente = a.id_cliente),
                 (select direccion from ente as c where c.id_ente = a.id_cliente), b.propietario_actual from cliente_juridico as a
                 inner join propietario_vehiculo as b
