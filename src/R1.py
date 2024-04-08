@@ -8,6 +8,15 @@ def mostrar_menu():
     print("3. Borrar una factura")
     print("4. Salir")
     
+def mostrar_menu_modificar():
+    print("Selecciona el campo que quieres modificar:")
+    print("1. Cedula del empleado")
+    print("2. ID del cliente")
+    print("3. Tipo de factura")
+    print("4. Bono de la factura")
+    print("5. Fecha de la factura")
+    print("6. Hora de la factura")
+    
 def cls():
     if os.name == "nt":
         os.system("cls")
@@ -48,19 +57,35 @@ def main():
                 print("Factura creada con éxito.")
 
             elif opcion == "2":
-                
                 id_factura = input("Introduce el ID de la factura que quieres modificar: ")
-                ci_empleado = input("Introduce la cedula del empleado que quieres modificar: ")
-                id_cliente = input("Introduce el ID del cliente que quieres modificar: ")
-                tipo_factura = input("Introduce el tipo (Compra o Venta): ")
-                nuevo_bono = input("Introduce el nuevo bono de la factura: ")
-                nueva_fecha = input("Introduce la nueva fecha de la factura (YYYY-MM-DD): ")
-                nueva_hora = input("Introduce la nueva hora de la factura (HH:MM:SS): ")
-                cursor.execute("""
+
+                mostrar_menu_modificar()
+                opcion_campo = input("Introduce el número de la opción: ")
+
+                if opcion_campo == "1":
+                    nuevo_valor = input("Introduce la nueva cedula del empleado: ")
+                    campo = "ci_empleado"
+                elif opcion_campo == "2":
+                    nuevo_valor = input("Introduce el nuevo ID del cliente: ")
+                    campo = "id_cliente"
+                elif opcion_campo == "3":
+                    nuevo_valor = input("Introduce el nuevo tipo (Compra o Venta): ")
+                    campo = "tipo_factura"
+                elif opcion_campo == "4":
+                    nuevo_valor = input("Introduce el nuevo bono de la factura: ")
+                    campo = "bono"
+                elif opcion_campo == "5":
+                    nuevo_valor = input("Introduce la nueva fecha de la factura (YYYY-MM-DD): ")
+                    campo = "dia"
+                elif opcion_campo == "6":
+                    nuevo_valor = input("Introduce la nueva hora de la factura (HH:MM:SS): ")
+                    campo = "hora"
+
+                cursor.execute(f"""
                     UPDATE factura
-                    SET ci_empleado = %s, id_cliente = %s, tipo_factura = %s, bono = %s, dia = %s, hora = %s
+                    SET {campo} = %s
                     WHERE id_factura = %s;
-                """, (ci_empleado, id_cliente, tipo_factura, nuevo_bono, nueva_fecha, nueva_hora, id_factura))
+                """, (nuevo_valor, id_factura))
                 connection.commit()
                 print("Factura modificada con éxito.")
 
