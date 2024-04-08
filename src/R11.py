@@ -52,9 +52,13 @@ def main():
                 bandera = True
                 
         if bandera == False:
-            print("Usuario No Encontrado. ")
+            print(f"El usuario {us} no se ha encontrado en la base de datos")
+            x1 = None
+            presiona(x1)
         else: 
             while(True):
+                cls()
+                print(f"Bienvenido {us}. \n")
                 menu()
                 opc = input("\nPor favor, ingrese una opción: ")
 
