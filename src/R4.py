@@ -1,5 +1,6 @@
 import psycopg2
 from psycopg2 import DatabaseError
+from tabulate import tabulate
 import os
 
 def cls():
@@ -8,14 +9,16 @@ def cls():
     else: 
         os.system("clear")
         
+def presiona(x):
+    x = input("Presiona para continuar...")
+        
 def main():
     try:
         connection_string = "postgresql://concesionaria_owner:WtN7HmGxF9pg@ep-weathered-glitter-a4gsgrak.us-east-1.aws.neon.tech/CONCESIONARIA?sslmode=require"    
         connection = psycopg2.connect(connection_string)
         cursor = connection.cursor()
         cls()
-        
-        print("vin_vehiculo | marca | modelo | ci_empleado | nombre_empleado | tipo_factura | ci_cliente_natural | nombre_cliente_natural")
+
 
         cursor.execute("""
             SELECT 
@@ -42,8 +45,14 @@ def main():
             LIMIT 20;
         """)
         rows = cursor.fetchall()
-        for row in rows:
-            print(row)
+        
+        column_names = [description[0] for description in cursor.description]
+        tabla = tabulate(rows, headers= column_names, tablefmt="psql")
+        print(tabla)
+
+            
+        x1 = None
+        presiona(x1)
 
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))

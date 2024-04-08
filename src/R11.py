@@ -68,9 +68,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             vin = input("Ingrese el VIM del vehiculo:  ")
                             cls()
@@ -183,9 +185,11 @@ def main():
                                     
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             vin = input("Ingrese el VIM del vehiculo:  ")
                             cls()
@@ -231,9 +235,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             vin = input("Ingrese el RIF del proveedor (Solo el numero):  ")
                             proveedor = "J"+vin
@@ -330,9 +336,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             RIF = input("Ingrese el RIF del proveedor (SOLO EN NUMEROS):  ")
                             result = "J"+RIF
@@ -379,9 +387,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             RIF = input("Ingrese el RIF del taller (Solo el numero):  ")
                             taller = "J"+RIF
@@ -478,9 +488,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             RIF = input("Ingrese el RIF del taller (SOLO EN NUMEROS):  ")
                             result = "J"+RIF
@@ -527,9 +539,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el ID del evento:  ")
                             cls()
@@ -624,9 +638,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el ID del evento:  ")
                             cls()
@@ -672,9 +688,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el ID de la carrera:  ")
                             cls()
@@ -831,9 +849,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el ID de la carrera:  ")
                             cls()
@@ -879,9 +899,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             num = input("Ingrese el numero de la parte:  ")
                             cls()
@@ -953,9 +975,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el numero de la parte:  ")
                             cls()
@@ -1001,9 +1025,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el id de la factura:  ")
                             cls()
@@ -1075,9 +1101,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese la id de la factura:  ")
                             cls()
@@ -1123,9 +1151,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             ced = input("Ingrese la cedula del empleado:  ")
                             cls()
@@ -1261,9 +1291,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             ci = input("Ingrese la id de la factura:  ")
                             cls()
@@ -1309,9 +1341,11 @@ def main():
 
                     if opc2 == "1":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese el id del ente:  ")
                             cls()
@@ -1383,9 +1417,11 @@ def main():
                             
                     elif opc2 == "2":
                         try:
-                            column_names = [description[0] for description in cursor.description]
-                            tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                            print(tabla)
+                            opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                            if opctabla == "1":
+                                column_names = [description[0] for description in cursor.description]
+                                tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                                print(tabla)
 
                             id = input("Ingrese la id del ente:  ")
                             cls()

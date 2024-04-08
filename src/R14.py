@@ -38,10 +38,12 @@ def main():
                 try:
                     cursor.execute(f"SELECT * FROM evento")
                     datos = cursor.fetchall()
-                    
-                    column_names = [description[0] for description in cursor.description]
-                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                    print(tabla)
+                    opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                    if opctabla == "1":
+                        column_names = [description[0] for description in cursor.description]
+                        tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                        print(tabla)
+                        
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
                     cls()
@@ -95,9 +97,11 @@ def main():
                     cursor.execute(f"SELECT * FROM carrera")
                     datos = cursor.fetchall()
                     
-                    column_names = [description[0] for description in cursor.description]
-                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                    print(tabla)
+                    opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                    if opctabla == "1":
+                        column_names = [description[0] for description in cursor.description]
+                        tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                        print(tabla)
                     
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
@@ -125,14 +129,17 @@ def main():
                     presiona(x1)
                     
             elif x == "3":
-                try:
+                #try:
                     
                     cursor.execute(f"SELECT * FROM factura")
                     datos = cursor.fetchall()
                     
-                    column_names = [description[0] for description in cursor.description]
-                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                    print(tabla)
+                    opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                    if opctabla == "1":
+                        column_names = [description[0] for description in cursor.description]
+                        tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                        print(tabla)
+                
                     
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
@@ -166,20 +173,22 @@ def main():
                     print(f"Estas son las ventas totales en el mes {mesus} y el año {yearus}: {precio_ventas}")
                     x1 = None
                     presiona(x1)
-                except:
+                #except:
                     print("No existe registro de ese mes. ")
                     x1 = None
                     presiona(x1)
-                pass
+                #pass
             elif x == "4":
                 try:
                     
                     cursor.execute(f"SELECT * FROM factura")
                     datos = cursor.fetchall()
                     
-                    column_names = [description[0] for description in cursor.description]
-                    tabla = tabulate(datos, headers= column_names, tablefmt="psql")
-                    print(tabla)
+                    opctabla = input("Quieres ver la tabla de datos?(1 = Si)(2 = No) \n->")
+                    if opctabla == "1":
+                        column_names = [description[0] for description in cursor.description]
+                        tabla = tabulate(datos, headers= column_names, tablefmt="psql")
+                        print(tabla)
                     
                     mesus = input("\nIngrese el mes a elegir: ")
                     yearus = input("Ingrese el año a elegir: ")
@@ -233,9 +242,6 @@ def main():
             
     except DatabaseError as ex:
         print("Error durante la conexión: {}".format(ex))
-
-    
-    
     
 
     
